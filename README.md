@@ -2,11 +2,22 @@
 
 A modern, immersive photography portfolio built with **Next.js**, designed to feel less like a website—and more like an experience.
 
+<p align="center">
+  <img src="./public/preview.jpg" width="900"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=React&logoColor=black" />
+  <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" />
+  <img src="https://img.shields.io/badge/-Next.Js-black?style=for-the-badge&logoColor=white&logo=nextjs&color=0ae448" />
+  
+
+
 ---
 
 ## 🌐 Live Site
 
-👉 https://www.keepitkatelin.com
+👉 [Keep It Katelin](https://www.keepitkatelin.com)
 
 ---
 
@@ -124,7 +135,7 @@ const isFast = velocity > 0.5;
 ```bash
 /app
   layout.js
-  page.js
+  
 
 /components
   Navbar.jsx
