@@ -205,7 +205,7 @@ Preloading, decoding, and transition timing are treated as core features—not a
 ## 👤 Author
 
 **Jean Richardson**
-Frontend Developer
+- Frontend Developer & UI/UX Designer
 
 ---
 
