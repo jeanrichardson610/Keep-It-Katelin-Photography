@@ -1,36 +1,214 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📸 Keep It Katelin
 
-## Getting Started
+A modern, immersive photography portfolio built with **Next.js**, designed to feel less like a website—and more like an experience.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌐 Live Site
+
+👉 https://www.keepitkatelin.com
+
+---
+
+## ✨ Overview
+
+**Keep It Katelin** is a fully responsive photography portfolio that blends performance, motion, and minimal UI to showcase visual work without distraction.
+
+Instead of traditional page navigation, the site uses a **gallery-first experience**:
+
+* Fullscreen cinematic backgrounds
+* Smooth gallery transitions
+* Modal-based image exploration
+* Mobile-first swipe interactions
+
+The goal was simple:
+
+> Let the photography speak—while the UI stays out of the way.
+
+---
+
+## 🎯 Key Features
+
+### 🎞️ Gallery System
+
+* Multiple curated galleries (Highlights, Events, Editorial, Portrait, etc.)
+* Seamless switching with animated transitions
+* Backgrounds dynamically update per gallery
+
+### ⚡ Performance-Driven Image Handling
+
+* Custom **image preloading + decoding system**
+* Idle-time prefetching for adjacent galleries
+* Prevents flickering and improves perceived speed
+
+### 📱 Mobile-First Interaction
+
+* Swipe gestures with velocity detection
+* Multi-step flick navigation (fast swipe = skip images)
+* Touch-safe modal closing logic
+
+### 🖼️ Immersive Modal Viewer
+
+* Fullscreen image viewing
+* Keyboard navigation (← → ESC)
+* Smooth directional slide animations
+
+### 🎨 Cinematic UI/UX
+
+* Background crossfade with blur + dissolve
+* Glassmorphism gallery container
+* Subtle motion easing for a premium feel
+
+### 📬 Contact UX
+
+* One-click email copy with toast feedback
+* Direct Instagram integration
+
+---
+
+## 🧠 Technical Highlights
+
+### Smart Image Preloading
+
+```js
+const preloadAndDecode = (src) => {
+  if (!src || decodedCache.has(src)) return;
+
+  const img = new Image();
+  img.src = src;
+
+  if (img.decode) img.decode().catch(() => {});
+  decodedCache.add(src);
+};
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Uses `Image.decode()` for smoother rendering
+* Avoids layout jank during transitions
+* Caches decoded assets to prevent redundant work
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Velocity-Based Swipe Detection
 
-## Learn More
+```js
+const velocity = Math.abs(dx) / dt;
+const isFast = velocity > 0.5;
+```
 
-To learn more about Next.js, take a look at the following resources:
+* Differentiates between slow drag vs intentional swipe
+* Scales navigation steps based on swipe speed
+* Creates a natural, app-like interaction model
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Background Crossfade System
 
-## Deploy on Vercel
+* Dual-layer background rendering
+* Controlled fade state for smooth transitions
+* Mobile-specific focal point adjustments
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠 Tech Stack
+
+* **Framework:** Next.js (App Router)
+* **Frontend:** React
+* **Styling:** CSS + Tailwind utilities
+* **Icons:** react-icons
+* **Deployment:** Vercel
+
+---
+
+## 📁 Project Structure
+
+```bash
+/app
+  layout.js
+  page.js
+
+/components
+  Navbar.jsx
+  Slider.jsx
+
+/styles
+  Slider.css
+
+/public
+  /images
+```
+
+---
+
+## ⚙️ Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 🚀 Deployment
+
+This project is deployed using **Vercel** with automatic CI/CD:
+
+* Push to GitHub → triggers deployment
+* Optimized for Next.js out of the box
+
+---
+
+## 💡 Design Philosophy
+
+This project focuses on three core principles:
+
+### 1. Content First
+
+The UI never competes with the photography.
+
+### 2. Motion with Purpose
+
+Animations are subtle, fast, and intentional—not decorative.
+
+### 3. Performance = UX
+
+Preloading, decoding, and transition timing are treated as core features—not afterthoughts.
+
+---
+
+## 🔮 Future Improvements
+
+* Dark / light adaptive UI (in progress)
+* CMS integration for dynamic galleries
+* Image optimization via Next.js `<Image />`
+* Accessibility enhancements (ARIA, focus states)
+
+---
+
+## 👤 Author
+
+**Jean Richardson**
+Frontend Developer
+
+---
+
+## 📬 Contact
+
+* Instagram: https://instagram.com/keepitkatelin
+* Email: [kate.richardson410@gmail.com](mailto:kate.richardson410@gmail.com)
+
+---
+
+## ⭐ Final Note
+
+This project is a reflection of how I approach frontend development:
+
+> Clean architecture, intentional UX, and performance-driven design.
+
+If you're viewing this as a recruiter or collaborator—thanks for taking the time.
