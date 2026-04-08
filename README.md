@@ -7,6 +7,10 @@ A modern, immersive photography portfolio built with **Next.js**, designed to fe
 </p>
 
 <p align="center">
+  <img src="./public/images/demo.gif" width="900"/>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=React&logoColor=black" />
   <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" />
   <img src="https://img.shields.io/badge/-Next.Js-black?style=for-the-badge&logoColor=white&logo=nextjs&color=0ae448" />
