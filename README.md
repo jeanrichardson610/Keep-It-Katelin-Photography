@@ -1,91 +1,116 @@
-# 📸 Keep It Katelin
+<div align="center">
+  <br />
 
-A modern, immersive photography portfolio built with **Next.js**, designed to feel less like a website—and more like an experience.
-
-<p align="center">
+  <p align="center">
   <img src="./public/preview.jpg" width="900"/>
-</p>
+  </p>
 
-<p align="center">
-  <img src="./public/images/demo.gif" width="900"/>
-</p>
+  <p align="center">
+  <img src="./public/demo.gif" width="900"/>
+  </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=React&logoColor=black" />
-  <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" />
-  <img src="https://img.shields.io/badge/-Next.Js-black?style=for-the-badge&logoColor=white&logo=nextjs&color=0ae448" />
-  
+  <h1>📸 Keep It Katelin</h1>
 
+  <p>
+    A cinematic photography portfolio, built to feel less like a website and more like an experience.<br/>
+    No CMS. No admin panel. Just galleries, motion, and a UI that gets out of the way.
+  </p>
 
----
+  <br />
 
-## 🌐 Live Site
+  <div>
+    <img src="https://img.shields.io/badge/-Next.js-black?style=for-the-badge&logoColor=white&logo=next.js&color=000000" alt="next.js" />
+    <img src="https://img.shields.io/badge/-React-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react" />
+    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
+    <img src="https://img.shields.io/badge/-react--icons-black?style=for-the-badge&logoColor=white&color=E91E63" alt="react-icons" />
+    <img src="https://img.shields.io/badge/-Vercel-black?style=for-the-badge&logoColor=white&logo=vercel&color=000000" alt="vercel" />
+  </div>
+</div>
 
-👉 [Keep It Katelin](https://www.keepitkatelin.com)
+## 📋 Table of Contents
 
----
+1. 🤖 [Introduction](#introduction)
+2. ⚙️ [Tech Stack](#tech-stack)
+3. 🔋 [Features](#features)
+4. 🤸 [Quick Start](#quick-start)
+5. 🗂️ [Project Structure](#project-structure)
+6. 🕸️ [Snippets](#snippets)
+7. 🎨 [Design Philosophy](#design-philosophy)
+8. 🔮 [Future Improvements](#future-improvements)
+9. 📌 [Known Limitations](#known-limitations)
 
-## ✨ Overview
+## <a name="introduction">🤖 Introduction</a>
 
-**Keep It Katelin** is a fully responsive photography portfolio that blends performance, motion, and minimal UI to showcase visual work without distraction.
+Keep It Katelin is a fully responsive photography portfolio built around a gallery-first experience rather than traditional page navigation — fullscreen cinematic backgrounds, animated gallery transitions, a fullscreen modal viewer, and mobile-first swipe gestures.
 
-Instead of traditional page navigation, the site uses a **gallery-first experience**:
+The project was built to demonstrate frontend craft where the interface has to disappear: a custom image preloading and decoding layer to kill flicker between galleries, velocity-based swipe detection that distinguishes a lazy drag from an intentional flick, and a dual-layer background crossfade system — all in service of one rule: the photography speaks, the UI stays out of the way.
 
-* Fullscreen cinematic backgrounds
-* Smooth gallery transitions
-* Modal-based image exploration
-* Mobile-first swipe interactions
+**🌐 [Live Site → keepitkatelin.com](https://www.keepitkatelin.com)**
 
-The goal was simple:
+## <a name="tech-stack">⚙️ Tech Stack</a>
 
-> Let the photography speak—while the UI stays out of the way.
+- **Next.js** (App Router)
+- **React**
+- **CSS + Tailwind utilities** — hand-tuned transitions rather than off-the-shelf animation libraries
+- **react-icons**
+- **Vercel** — deployment with CI/CD on push to `main`
 
----
+## <a name="features">🔋 Features</a>
 
-## 🎯 Key Features
+👉 **Gallery system** — multiple curated galleries (Highlights, Events, Editorial, Portrait) with seamless, animated switching; the background updates per gallery.
 
-### 🎞️ Gallery System
+👉 **Performance-driven image handling** — a custom preload + decode pipeline with idle-time prefetching for adjacent galleries, so browsing never flickers or stutters.
 
-* Multiple curated galleries (Highlights, Events, Editorial, Portrait, etc.)
-* Seamless switching with animated transitions
-* Backgrounds dynamically update per gallery
+👉 **Mobile-first interaction** — swipe gestures with velocity detection, multi-step "flick to skip" navigation, and touch-safe modal closing.
 
-### ⚡ Performance-Driven Image Handling
+👉 **Immersive modal viewer** — fullscreen image viewing with keyboard navigation (← → ESC) and smooth directional slide animation.
 
-* Custom **image preloading + decoding system**
-* Idle-time prefetching for adjacent galleries
-* Prevents flickering and improves perceived speed
+👉 **Cinematic UI** — background crossfade with blur + dissolve, a glassmorphism gallery container, and subtle motion easing throughout.
 
-### 📱 Mobile-First Interaction
+👉 **Contact UX** — one-click email copy with toast feedback and direct Instagram integration.
 
-* Swipe gestures with velocity detection
-* Multi-step flick navigation (fast swipe = skip images)
-* Touch-safe modal closing logic
+## <a name="quick-start">🤸 Quick Start</a>
 
-### 🖼️ Immersive Modal Viewer
+**Prerequisites:** [Node.js](https://nodejs.org/en) and npm.
 
-* Fullscreen image viewing
-* Keyboard navigation (← → ESC)
-* Smooth directional slide animations
+```bash
+git clone <your-repo-url>
+cd keep-it-katelin-photography
+npm install
+npm run dev
+```
 
-### 🎨 Cinematic UI/UX
+Open [http://localhost:3000](http://localhost:3000).
 
-* Background crossfade with blur + dissolve
-* Glassmorphism gallery container
-* Subtle motion easing for a premium feel
+Build for production:
 
-### 📬 Contact UX
+```bash
+npm run build
+npm start
+```
 
-* One-click email copy with toast feedback
-* Direct Instagram integration
+## <a name="project-structure">🗂️ Project Structure</a>
 
----
+```
+app/
+  layout.js              – root layout
+components/
+  Navbar.jsx              – site navigation
+  Slider.jsx              – gallery slider + modal viewer
+styles/
+  Slider.css              – gallery, modal, and crossfade styles
+public/
+  images/                 – gallery assets
+```
 
-## 🧠 Technical Highlights
+## <a name="snippets">🕸️ Snippets</a>
 
-### Smart Image Preloading
+<details>
+<summary><code>Smart image preloading</code> — decode ahead of render to kill flicker</summary>
 
-```js
+Rather than letting the browser decode images on the main thread mid-transition, each upcoming image is preloaded and decoded off-screen and cached so it never has to happen twice:
+
+```javascript
 const preloadAndDecode = (src) => {
   if (!src || decodedCache.has(src)) return;
 
@@ -97,133 +122,46 @@ const preloadAndDecode = (src) => {
 };
 ```
 
-* Uses `Image.decode()` for smoother rendering
-* Avoids layout jank during transitions
-* Caches decoded assets to prevent redundant work
+</details>
 
----
+<details>
+<summary><code>Velocity-based swipe detection</code> — distinguishing a drag from a flick</summary>
 
-### Velocity-Based Swipe Detection
+Touch navigation tracks drag distance over time rather than distance alone, so a fast flick advances further than a slow, deliberate drag — a small detail that makes the gallery feel like a native app instead of a scroll container:
 
-```js
+```javascript
 const velocity = Math.abs(dx) / dt;
 const isFast = velocity > 0.5;
 ```
 
-* Differentiates between slow drag vs intentional swipe
-* Scales navigation steps based on swipe speed
-* Creates a natural, app-like interaction model
+</details>
 
----
+<details>
+<summary><code>Background crossfade system</code> — dual-layer transitions</summary>
 
-### Background Crossfade System
+Two background layers are rendered simultaneously, with a controlled fade state swapping which one is visible — avoiding the pop/flash of a single-layer `background-image` swap, with separate focal-point adjustments for mobile.
 
-* Dual-layer background rendering
-* Controlled fade state for smooth transitions
-* Mobile-specific focal point adjustments
+</details>
 
----
+## <a name="design-philosophy">🎨 Design Philosophy</a>
 
-## 🛠 Tech Stack
+**Content first.** The UI never competes with the photography.
 
-* **Framework:** Next.js (App Router)
-* **Frontend:** React
-* **Styling:** CSS + Tailwind utilities
-* **Icons:** react-icons
-* **Deployment:** Vercel
+**Motion with purpose.** Animations are subtle, fast, and intentional — not decorative.
 
----
+**Performance = UX.** Preloading, decoding, and transition timing are treated as core features, not afterthoughts.
 
-## 📁 Project Structure
+## <a name="future-improvements">🔮 Future Improvements</a>
 
-```bash
-/app
-  layout.js
-  
+- Dark / light adaptive UI (in progress)
+- CMS integration for dynamic galleries
+- Image optimization via Next.js `<Image />`
+- Accessibility enhancements (ARIA, focus states)
 
-/components
-  Navbar.jsx
-  Slider.jsx
+## <a name="known-limitations">📌 Known Limitations</a>
 
-/styles
-  Slider.css
+These were deliberate scope decisions, not oversights:
 
-/public
-  /images
-```
-
----
-
-## ⚙️ Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
-Build for production:
-
-```bash
-npm run build
-npm start
-```
-
----
-
-## 🚀 Deployment
-
-This project is deployed using **Vercel** with automatic CI/CD:
-
-* Push to GitHub → triggers deployment
-* Optimized for Next.js out of the box
-
----
-
-## 💡 Design Philosophy
-
-This project focuses on three core principles:
-
-### 1. Content First
-
-The UI never competes with the photography.
-
-### 2. Motion with Purpose
-
-Animations are subtle, fast, and intentional—not decorative.
-
-### 3. Performance = UX
-
-Preloading, decoding, and transition timing are treated as core features—not afterthoughts.
-
----
-
-## 🔮 Future Improvements
-
-* Dark / light adaptive UI (in progress)
-* CMS integration for dynamic galleries
-* Image optimization via Next.js `<Image />`
-* Accessibility enhancements (ARIA, focus states)
-
----
-
-## 👤 Author
-
-**Jean Richardson**
-- Frontend Developer & UI/UX Designer
-
----
-
-## 📬 Contact
-
-* Instagram: https://instagram.com/keepitkatelin
-* Email: [kate.richardson410@gmail.com](mailto:kate.richardson410@gmail.com)
-
----
-
-## ⭐ Final Note
-
-This project is a reflection of how I approach frontend development:
-
-> Clean architecture, intentional UX, and performance-driven design.
-
-If you're viewing this as a recruiter or collaborator—thanks for taking the time.
+- **No CMS** — galleries are managed in code rather than through an admin panel; content updates require a redeploy.
+- **No `next/image` yet** — image optimization is on the roadmap but not yet wired into the preload/decode pipeline.
+- **Accessibility is in progress** — keyboard navigation exists in the modal viewer, but ARIA labeling and focus states across the rest of the UI are a planned pass, not yet complete.
