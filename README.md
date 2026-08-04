@@ -2,10 +2,6 @@
   <br />
 
   <p align="center">
-  <img src="./public/preview.jpg" width="900"/>
-  </p>
-
-  <p align="center">
   <img src="./public/demo.gif" width="900"/>
   </p>
 
